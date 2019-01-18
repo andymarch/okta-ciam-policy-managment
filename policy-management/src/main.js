@@ -1,0 +1,45 @@
+import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+
+import Auth from '@okta/okta-vue'
+import landing from './components/landing/landing.component.vue'
+import login from './components/login/login.component.vue'
+import dashboard from './components/dashboard/dashboard.component.vue'
+
+Vue.use(VueRouter)
+Vue.use(Auth, {
+  issuer: 'https://pension-plan.oktapreview.com/oauth2/default',
+  client_id: '0oaj17prx2Pm9BRlK0h7',
+  redirect_uri: 'http://localhost:8080/implicit/callback',
+  scope: 'openid profile email'
+})
+Vue.config.productionTip = false
+
+const router = new VueRouter(
+  {
+    mode: 'history',
+    base: '/',
+    routes: [
+      { path: '/welcome', component: landing},
+      { path: '/', component: landing},
+      { path: '/login', component: login},
+      { path: '/implicit/callback', component: Auth.handleCallback() },
+      { path: '/dashboard', component: dashboard, meta: { requiresAuth: true }},
+    ]
+  }
+)
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth) && !(await Vue.prototype.$auth.isAuthenticated())) {
+    // Navigate to custom login page
+    next({ path: '/login' })
+  } else {
+    next()
+  }
+})
+
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app')
