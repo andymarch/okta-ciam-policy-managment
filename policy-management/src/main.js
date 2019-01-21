@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 
 import Auth from '@okta/okta-vue'
 import landing from './components/landing/landing.component.vue'
 import login from './components/login/login.component.vue'
 import dashboard from './components/dashboard/dashboard.component.vue'
 
+Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(Auth, {
   issuer: 'https://pension-plan.oktapreview.com/oauth2/default',

@@ -1,0 +1,18 @@
+
+#transactions {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.transaction {
+    background-color: eeeff0;
+    border: 1px solid #e3e4e4;
+}
+
+.paidIn {
+    color: green;
+}
+
+.paidOut {
+    color: red;
+}

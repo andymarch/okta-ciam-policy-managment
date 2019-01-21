@@ -1,0 +1,13 @@
+<div>
+    <table id="transactions" >
+        <thead>
+            <th>Date</th><th>Name</th><th>Paid In</th><th>Paid Out</th>
+        </thead>
+        <tr class="transaction" v-for='t in transactions'>
+            <td class="transactionDate">{{t.date}}</td>
+            <td class="transactionName">{{t.name}}</td>
+            <td class="paidIn">{{t.paidIn}}</td>
+            <td class="paidOut">{{t.paidOut}}</td>
+        </tr>
+    </table>
+</div>
