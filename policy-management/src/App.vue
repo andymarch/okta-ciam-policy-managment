@@ -103,4 +103,13 @@ body {
   float: left;
   margin-left: 10px;
 }
+
+.return-action {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.return-action a {
+  color: red;
+}
 </style>
