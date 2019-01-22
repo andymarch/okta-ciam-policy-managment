@@ -1,5 +1,5 @@
 <div>
-    <table id="transactions">
+    <table id="transactions" v-if="transactions.length > 0">
         <thead>
             <th>Date</th><th>Name</th><th>Paid In</th><th>Paid Out</th>
         </thead>
@@ -10,4 +10,7 @@
             <td class="paidOut">{{t.paidOut}}</td>
         </tr>
     </table>
+    <div v-else>
+        No recent transactions.
+    </div>
 </div>
