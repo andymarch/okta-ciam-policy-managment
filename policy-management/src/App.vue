@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div id="header">
-      <a href="/"><img id="branding" src="@/assets/policy_cloud_white.png"/></a>
+      <router-link to="/"><img id="branding" src="@/assets/policy_cloud_white.png"/></router-link>
     </div>
     <div id="context">
       <div class="contextbar">
-        <a class="contextElement" href="/login" v-if="!activeUser">Login</a>
+        <router-link class="contextElement" v-if="!activeUser" to="/login">Login</router-link>
         <span class="contextElement" v-else>
           <font-awesome-icon class="clickable" icon="user-lock" v-on:click="showToken()"/> {{ activeUser.email }} - <a href="#" @click.prevent="logout">Logout</a>
         </span>
