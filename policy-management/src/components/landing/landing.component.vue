@@ -4,8 +4,8 @@
 <script>
     export default {
         name: 'landing',
-        created: function(){
-            if(this.$auth.isAuthenticated()){
+        created: async function(){
+            if(await this.$auth.isAuthenticated()){
                 this.$router.push('/dashboard');
             }
         }

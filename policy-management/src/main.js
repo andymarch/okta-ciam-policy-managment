@@ -14,6 +14,7 @@ import login from './components/login/login.component.vue'
 import dashboard from './components/dashboard/dashboard.component.vue'
 import documents from './components/documents/documents.component.vue'
 import contributions from './components/contributions/contributions.component.vue';
+import profile from './components/profile/profile.component.vue';
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
@@ -35,13 +36,13 @@ const router = new VueRouter(
     mode: 'history',
     base: '/',
     routes: [
-      { path: '/welcome', component: landing},
       { path: '/', component: landing},
       { path: '/login', component: login},
       { path: '/implicit/callback', component: Auth.handleCallback() },
       { path: '/dashboard', component: dashboard, meta: { requiresAuth: true }},
       { path: '/documents', component: documents, meta: { requiresAuth: true }},
-      { path: '/contributions', component: contributions, meta: { requiresAuth: true }}
+      { path: '/contributions', component: contributions, meta: { requiresAuth: true }},
+      { path: '/profile', component: profile, meta: { requiresAuth: true }}
     ]
   }
 )

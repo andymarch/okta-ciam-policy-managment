@@ -1,0 +1,29 @@
+<div class="page-content">
+    <div class="block">
+    <h2>Your Profile</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
+        laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
+        enim vitae molestie. In hac habitasse platea dictumst. Nulla facilisi. Ut iaculis mi id accumsan
+        consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
+    </p>
+    <div class="return-action"><a href="/dashboard">return to dashboard</a></div>
+    <form @submit.prevent="updateProfile">
+        <p>
+            <label>Name</label>
+            <input v-model="profile.name"></input>
+        </p>
+        <p>
+            <label>Policy Number</label>
+            <input v-model="profile.policyNumber" disabled></input>
+        </p>
+        <div id="contribution-actions">
+            <button id="update-profile" type="submit">Update Profile</button>
+            <button id="undo-changes" type="reset" v-on:click="getProfile">Reset</button>
+        </div>  
+        <div>
+            <p>{{message}}</p>
+        </div>
+    </form>
+    </div>
+</div>
