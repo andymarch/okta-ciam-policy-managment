@@ -67,9 +67,9 @@
                         <input v-model="contributions.yearlyAdditionalVoluntaryContribution"></input>
                     </p>
                 </fieldset>
-                <div id="contribution-actions">
-                    <button id="update-contributions" type="submit">Update Contributions</button>
-                    <button id="reset-contributions" type="reset" v-on:click="getContributions">Reset</button>
+                <div class="actions">
+                    <button class="update-action" type="submit">Update Contributions</button>
+                    <button class="reset-action" type="reset" v-on:click="getContributions">Reset</button>
                 </div>  
                 <div>
                     <p>{{message}}</p>

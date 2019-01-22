@@ -128,4 +128,30 @@ body {
 .clickable {
   cursor: pointer;
 }
+
+.actions{
+    padding:10px;
+}
+
+.update-action{
+    border: none;
+    border-radius: 2px;
+    background-color: #5261ac;
+    color: white;
+    padding: .25em .5em;
+    cursor: pointer;
+    margin:10px;
+    font-size: medium;
+}
+
+.reset-action{
+    border: none;
+    border-radius: 2px;
+    background-color: gray;
+    color: white;
+    padding: .25em .5em;
+    cursor: pointer;
+    margin:10px;
+    font-size: medium;
+}
 </style>

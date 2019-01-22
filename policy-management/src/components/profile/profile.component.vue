@@ -13,6 +13,7 @@
         },
         methods: {
             getProfile: async function() {
+                message = "";
                 //const response = await this.$http.get('http://test-preprod-pol-uk-test.apigee.net/api/profile/v1/customer');
                 this.profile = new Profile();
             },

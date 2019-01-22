@@ -15,6 +15,7 @@ import dashboard from './components/dashboard/dashboard.component.vue'
 import documents from './components/documents/documents.component.vue'
 import contributions from './components/contributions/contributions.component.vue';
 import profile from './components/profile/profile.component.vue';
+import wishes from './components/wishes/wishes.component.vue';
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
@@ -42,7 +43,8 @@ const router = new VueRouter(
       { path: '/dashboard', component: dashboard, meta: { requiresAuth: true }},
       { path: '/documents', component: documents, meta: { requiresAuth: true }},
       { path: '/contributions', component: contributions, meta: { requiresAuth: true }},
-      { path: '/profile', component: profile, meta: { requiresAuth: true }}
+      { path: '/profile', component: profile, meta: { requiresAuth: true }},
+      { path: '/wishes', component: wishes, meta: { requiresAuth: true }}
     ]
   }
 )
