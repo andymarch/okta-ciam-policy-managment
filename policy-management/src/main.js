@@ -8,6 +8,7 @@ import landing from './components/landing/landing.component.vue'
 import login from './components/login/login.component.vue'
 import dashboard from './components/dashboard/dashboard.component.vue'
 import documents from './components/documents/documents.component.vue'
+import contributions from './components/contributions/contributions.component.vue';
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
@@ -29,7 +30,8 @@ const router = new VueRouter(
       { path: '/login', component: login},
       { path: '/implicit/callback', component: Auth.handleCallback() },
       { path: '/dashboard', component: dashboard, meta: { requiresAuth: true }},
-      { path: '/documents', component: documents, meta: { requiresAuth: true }}
+      { path: '/documents', component: documents, meta: { requiresAuth: true }},
+      { path: '/contributions', component: contributions, meta: { requiresAuth: true }}
     ]
   }
 )

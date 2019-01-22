@@ -84,6 +84,7 @@ body {
   border: 1px solid #e3e4e4;
   margin: 0 0 20px 0;
   position: relative;
+  padding-bottom: 10px;
 }
 
 .contextbar {

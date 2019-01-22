@@ -1,0 +1,80 @@
+<div class="page-content">
+    <div class="block">
+        <h2>Your Contributions</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
+            laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
+            enim vitae molestie. In hac habitasse platea dictumst. Nulla facilisi. Ut iaculis mi id accumsan
+            consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
+        </p>
+        <div class="return-action"><a href="/dashboard">return to dashboard</a></div>
+        <div>
+            <form @submit.prevent="updateContributions">
+                <p>
+                    <label>Employee Contribution</label>
+                    <input v-model="contributions.employeeContribution"></input>
+                </p>
+                <p>
+                    <label>Employer Contribution</label>
+                    <input v-model="contributions.employerContribution" disabled></input>
+                </p>
+                <p>
+                    <label>Additional Volunatry Contribution</label>
+                    <input v-model="contributions.additionalVoluntaryContribution"></input>
+                </p>
+                <fieldset>
+                    <legend>Weekly</legend>
+                    <p>
+                        <label>Employee Contribution</label>
+                        <input v-model="contributions.weeklyEmployeeContribution"></input>
+                    </p>
+                    <p>
+                        <label>Employer Contribution</label>
+                        <input v-model="contributions.weeklyEmployerContribution" disabled></input>
+                    </p>
+                    <p>
+                        <label>Additional Volunatry Contribution</label>
+                        <input v-model="contributions.weeklyAdditionalVoluntaryContribution"></input>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Monthly</legend>
+                    <p>
+                        <label>Employee Contribution</label>
+                        <input v-model="contributions.monthlyEmployeeContribution"></input>
+                    </p>
+                    <p>
+                        <label>Employer Contribution</label>
+                        <input v-model="contributions.monthlyEmployerContribution" disabled></input>
+                    </p>
+                    <p>
+                        <label>Additional Volunatry Contribution</label>
+                        <input v-model="contributions.monthlyAdditionalVoluntaryContribution"></input>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Yearly</legend>
+                    <p>
+                        <label>Employee Contribution</label>
+                        <input v-model="contributions.yearlyEmployeeContribution"></input>
+                    </p>
+                    <p>
+                        <label>Employer Contribution</label>
+                        <input v-model="contributions.yearlyEmployerContribution" disabled></input>
+                    </p>
+                    <p>
+                        <label>Additional Volunatry Contribution</label>
+                        <input v-model="contributions.yearlyAdditionalVoluntaryContribution"></input>
+                    </p>
+                </fieldset>
+                <div id="contribution-actions">
+                    <button id="update-contributions" type="submit">Update Contributions</button>
+                    <button id="reset-contributions" type="reset" v-on:click="getContributions">Reset</button>
+                </div>  
+                <div>
+                    <p>{{message}}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
