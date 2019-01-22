@@ -2,8 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserLock } from '@fortawesome/free-solid-svg-icons'
+import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import Auth from '@okta/okta-vue'
+
 import landing from './components/landing/landing.component.vue'
 import login from './components/login/login.component.vue'
 import dashboard from './components/dashboard/dashboard.component.vue'
@@ -18,6 +23,11 @@ Vue.use(Auth, {
   redirect_uri: 'http://localhost:8080/implicit/callback',
   scope: 'openid profile email'
 })
+
+library.add(faUserLock)
+library.add(faSyncAlt)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 Vue.config.productionTip = false
 
 const router = new VueRouter(

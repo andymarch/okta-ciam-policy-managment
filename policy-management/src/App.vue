@@ -7,21 +7,28 @@
       <div class="contextbar">
         <a class="contextElement" href="/login" v-if="!activeUser">Login</a>
         <span class="contextElement" v-else>
-          {{ activeUser.email }} - <a href="#" @click.prevent="logout">Logout</a>
+          <font-awesome-icon class="clickable" icon="user-lock" v-on:click="showToken()"/> {{ activeUser.email }} - <a href="#" @click.prevent="logout">Logout</a>
         </span>
       </div>
     </div>
+    <securityView v-if="displaySecurity" class="block">          
+    </securityView>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import securityView from './components/security/security.component.vue'
 export default {
-  name: 'app',
-  data () {
+      name: 'app',
+      data () {
         return {
-          activeUser: null
+          activeUser: null,
+          displaySecurity: false,
         }
+      },
+      components: {
+        securityView
       },
       async created () {
         await this.refreshActiveUser()
@@ -33,11 +40,15 @@ export default {
       methods: {
         async refreshActiveUser () {
           this.activeUser = await this.$auth.getUser()
+          this.token = await this.$auth.getAccessToken()
         },
         async logout () {
           await this.$auth.logout()
           await this.refreshActiveUser()
           this.$router.push('/')
+        },
+        showToken: function() {
+          this.displaySecurity = !this.displaySecurity;          
         }
       }
     }
@@ -112,5 +123,9 @@ body {
 
 .return-action a {
   color: red;
+}
+
+.clickable {
+  cursor: pointer;
 }
 </style>
