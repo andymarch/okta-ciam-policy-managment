@@ -3,6 +3,11 @@
 
 <script>
     export default {
-        name: 'landing'
+        name: 'landing',
+        created: function(){
+            if(this.$auth.isAuthenticated()){
+                this.$router.push('/dashboard');
+            }
+        }
     }
 </script>

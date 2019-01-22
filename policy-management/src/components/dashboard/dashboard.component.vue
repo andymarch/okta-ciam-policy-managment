@@ -5,7 +5,6 @@
     import Transactions from '../transactions/transactions.component.vue'
     export default {
         name: 'dashboard',
-        props: ['activeUser'],
         components: {
             Transactions
         }
