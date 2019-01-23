@@ -5,15 +5,14 @@
     import OktaSignIn from '@okta/okta-signin-widget'
     import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css'
     import '@okta/okta-signin-widget/dist/css/okta-theme.css'
-    import sampleConfig from '../../okta.config.js'
     export default {
     name: 'Login',
     mounted: function () {
         this.$nextTick(function () {
         this.widget = new OktaSignIn({
-            baseUrl: sampleConfig.oidc.issuer.split('/oauth2')[0],
-            clientId: sampleConfig.oidc.clientId,
-            redirectUri: sampleConfig.oidc.redirectUri,
+            baseUrl: process.env.VUE_APP_ISSUER.split('/oauth2')[0],
+            clientId: process.env.VUE_APP_CLIENT_ID,
+            redirectUri: process.env.VUE_APP_REDIRECT,
             //logo: require('@/assets/policy_cloud_black.png'),
             i18n: {
             en: {
@@ -31,9 +30,9 @@
             ],
             authParams: {
             responseType: ['id_token', 'token'],
-            issuer: sampleConfig.oidc.issuer,
+            issuer: process.env.VUE_APP_ISSUER,
             display: 'page',
-            scopes: sampleConfig.oidc.scope.split(' ')
+            scopes: process.env.VUE_APP_SCOPE.split(' ')
             }
         })
         this.widget.renderEl(

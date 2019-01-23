@@ -27,10 +27,10 @@ import wishes from './components/wishes/wishes.component.vue';
 Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(Auth, {
-  issuer: 'https://pension-plan.oktapreview.com/oauth2/default',
-  client_id: '0oaj2s4r5kkHCYt7w0h7',
-  redirect_uri: 'http://localhost:8080/implicit/callback',
-  scope: 'openid profile email'
+  issuer: process.env.VUE_APP_ISSUER,
+  client_id: process.env.VUE_APP_CLIENT_ID,
+  redirect_uri: process.env.VUE_APP_REDIRECT,
+  scope: process.env.VUE_APP_SCOPE
 })
 
 library.add(faUserLock)

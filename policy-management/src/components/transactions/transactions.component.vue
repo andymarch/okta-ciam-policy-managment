@@ -23,7 +23,7 @@
                 const response = await this.$http.get(
                     'http://test-preprod-pol-uk-test.apigee.net/api/transaction/v1/transactions',
                      {params: {}, headers:
-                      {'Authorization': tokenValue,'id_token': idTokenValue}}) 
+                      {'Authorization': "Bearer "+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
                         const json = await response.json();
                         for(var k in json.transactions) {
