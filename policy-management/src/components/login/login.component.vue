@@ -26,6 +26,9 @@
                 multiOptionalFactorEnroll: true,  // Allow users to enroll in multiple optional factors before finishing the authentication flow.
                 selfServiceUnlock: true,          // Will enable unlock in addition to forgotten password
             },
+            idps: [
+                {type: 'GOOGLE', id: '0oaj2qy01c1n4GKa40h7'}
+            ],
             authParams: {
             responseType: ['id_token', 'token'],
             issuer: sampleConfig.oidc.issuer,

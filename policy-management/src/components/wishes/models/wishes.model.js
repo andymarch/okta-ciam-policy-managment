@@ -1,8 +1,9 @@
+import Beneficiary from './benficiary.model.js'
 export default class Wishes {
     constructor(data) {
-        if(data != undefined){
-            console.log("Stub implementation of wishes, provided data will not be used.")
+        this.beneficiaries = [];
+        for(var k in data.beneficiaries) {
+            this.beneficiaries.push(new Beneficiary(data.beneficiaries[k]));
         }
-        this.beneficiaryName = "Test beneficiary";
     }
 }

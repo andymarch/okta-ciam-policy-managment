@@ -10,10 +10,21 @@
     </p>
     <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
     <form @submit.prevent="updateWishes">
-        <p>
-            <label>BeneficiaryName</label>
-            <input v-model="wishes.beneficiaryName"></input>
-        </p>
+        <span v-for='w in wishes.beneficiaries'>
+                <p>
+                    <label>Beneficiary Name</label>
+                    <input v-model="w.beneficiaryFullName"></input>
+                </p>
+                <p>
+                    <label>Relationship</label>
+                    <input v-model="w.relationshipToBeneficiary"></input>
+                </p>
+                <p>
+                    <label>Percentage</label>
+                    <input v-model="w.percentageAllocated"></input>
+                </p>
+        </span>
+        
         <div class="actions">
             <button class="update-action" type="submit">Update Wishes</button>
             <button class="reset-action" type="reset" v-on:click="getWishes">Reset</button>
