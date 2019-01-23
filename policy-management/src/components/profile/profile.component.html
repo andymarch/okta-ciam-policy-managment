@@ -9,22 +9,50 @@
         consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
     </p>
     <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
-    <form @submit.prevent="updateProfile">
+        
         <p>
-            <label>Name</label>
-            <input v-model="profile.name"></input>
+            <label>Member Reference</label>
+            <input v-model="profile.memberReference"></input>
         </p>
         <p>
-            <label>Policy Number</label>
-            <input v-model="profile.policyNumber" disabled></input>
+            <label>First Name</label>
+            <input v-model="profile.firstName"></input>
         </p>
-        <div class="actions">
-            <button class="update-action" type="submit">Update Profile</button>
-            <button class="reset-action" type="reset" v-on:click="getProfile">Reset</button>
-        </div>  
-        <div>
-            <p>{{message}}</p>
-        </div>
-    </form>
+        <p>
+            <label>Family Name</label>
+            <input v-model="profile.familyName"></input>
+        </p>
+        <p>
+            <label>Marital Status</label>
+            <input v-model="profile.maritalStatus"></input>
+        </p>
+        <p>
+            <label>Gender</label>
+            <input v-model="profile.gender"></input>
+        </p>
+        <p>
+            <label>Salary</label>
+            <input v-model="profile.salary"></input>
+        </p>
+        <p>
+            <label>PPS Number</label>
+            <input v-model="profile.ppsNumber"></input>
+        </p>
+        <p>
+            <label>Contact Number</label>
+            <input v-model="profile.phoneNumber"></input>
+        </p>
+        <p>
+            <label>Date of Birth</label>
+            <input v-model="profile.retirementDate"></input>
+        </p>
+        <p>
+            <label>Date Joined Scheme</label>
+            <input v-model="profile.dateJoinedScheme"></input>
+        </p>
+        <p>
+            <label>Address</label>
+            <input v-model="profile.address"></input>
+        </p>    
     </div>
 </div>
