@@ -14,12 +14,39 @@
         methods: {
             getContributions: async function() {
                 this.message = "";
-                const response = await this.$http.get('https://test-preprod-pol-uk-test.apigee.net/mock-api/contribution/v1/contributions');
-                this.contributions = new Contributions(await response.json());
+
+                //get the planNumber from the userInfo
+                var userInfo = await this.$auth.getUser();
+                var planNumber = userInfo.PlanNumber[0];
+
+                const response = await this.$http.get(
+                    'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
+                     {params: {}, headers: {'Authorization': planNumber}})
+                     .then(async response => {
+                        const json = await response.json();
+                        this.contributions = new Contributions(await response.json());
+                    }, response => {
+                        console.log(response.status)
+                    });
             },
 
-            updateContributions: async function(){
-                this.message = "Your contributions have been updated"
+            updateContributions: async function(){ 
+                //get the planNumber from the userInfo
+                var userInfo = await this.$auth.getUser();
+                var planNumber = userInfo.PlanNumber[0];
+
+
+                this.$http.put(
+                    'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
+                    this.contributions,
+                    {
+                         headers: {'Authorization': planNumber}
+                    }).then(response => {
+                        this.message = "Your contributions have been updated."
+                    }, response => {
+                        console.log(response.status + " " + response.body)
+                        this.message = "Sorry something went wrong."
+                    });
             }
         },
         created: function(){
