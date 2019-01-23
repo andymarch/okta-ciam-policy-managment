@@ -1,7 +1,7 @@
 <div class="page-content">
     <div class="block">
     <h2>Your Wishes</h2>
-    <div><font-awesome-icon class="clickable" icon="handshake" size="2x"/></div>
+    <div><font-awesome-icon icon="handshake" size="2x"/></div>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
         laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
@@ -9,29 +9,48 @@
         consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
     </p>
     <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
-    <form @submit.prevent="updateWishes">
-        <span v-for='w in wishes.beneficiaries'>
-                <p>
-                    <label>Beneficiary Name</label>
+    
+    <table id="wishes">
+            <thead>
+                <th>Beneficiary Name</th><th>Relationship</th><th>Percentage</th><th></th>
+            </thead>
+            <tr v-for='w in wishes.beneficiaries'>
+                <td>
                     <input v-model="w.beneficiaryFullName"></input>
-                </p>
-                <p>
-                    <label>Relationship</label>
+                </td> 
+                <td>
                     <input v-model="w.relationshipToBeneficiary"></input>
-                </p>
-                <p>
-                    <label>Percentage</label>
+                </td>
+                <td>
                     <input v-model="w.percentageAllocated"></input>
-                </p>
-        </span>
-        
-        <div class="actions">
-            <button class="update-action" type="submit">Update Wishes</button>
+                </td>
+                <td>
+                    <font-awesome-icon class="clickable" icon="user-minus" v-on:click="wishes.remove(w)"/>
+                </td>
+            </tr>
+            <tr>
+            
+                <td>
+                    <input v-model="newBene.beneficiaryFullName"></input>
+                </td>
+                <td>
+                    <input v-model="newBene.relationshipToBeneficiary"></input>
+                </td>
+                <td>
+                    <input v-model="newBene.percentageAllocated"></input>
+                </td>
+                <td>
+                    <font-awesome-icon class="clickable" icon="user-plus" v-on:click="addBene"/>
+                </td>  
+            </tr>
+        </table>
+
+        <form @submit.prevent="updateWishes">
+            <button class="update-action" type="submit">Save</button>
             <button class="reset-action" type="reset" v-on:click="getWishes">Reset</button>
-        </div>  
+        </form>
         <div>
             <p>{{message}}</p>
         </div>
-    </form>
     </div>
 </div>

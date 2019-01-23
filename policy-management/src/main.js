@@ -10,6 +10,8 @@ import { faCoins } from '@fortawesome/free-solid-svg-icons'
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
 import { faHandshake } from '@fortawesome/free-solid-svg-icons'
 import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faUserMinus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import Auth from '@okta/okta-vue'
@@ -38,6 +40,8 @@ library.add(faCoins)
 library.add(faFileAlt)
 library.add(faHandshake)
 library.add(faFileDownload)
+library.add(faUserPlus)
+library.add(faUserMinus)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

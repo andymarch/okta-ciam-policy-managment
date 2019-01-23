@@ -2,22 +2,6 @@
     padding-bottom: 30px;
 }
 
-thead {
-    background-color: #5261ac;
-    color: white;
-}
-
 #documents{
     width: 100%;
 }
-
-table { 
-    border-collapse:collapse;
-    margin-top:20px;
-}
-
-td:not(:first-child) {
-    padding-top:20px;
-    padding-bottom:20px;
-    padding-right:20px;       
-  }

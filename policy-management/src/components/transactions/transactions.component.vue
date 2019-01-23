@@ -20,8 +20,6 @@
                 var tokenValue = await this.$auth.getAccessToken();
                 var idTokenValue = await this.$auth.getIdToken();
 
-                console.log(idTokenValue)
-
                 const response = await this.$http.get(
                     'http://test-preprod-pol-uk-test.apigee.net/api/transaction/v1/transactions',
                      {params: {}, headers:

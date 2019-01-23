@@ -6,4 +6,11 @@ export default class Wishes {
             this.beneficiaries.push(new Beneficiary(data.beneficiaries[k]));
         }
     }
+    remove(data){
+        var index = this.beneficiaries.indexOf(data);
+        if (index !== -1) this.beneficiaries.splice(index, 1);
+    }
+    add(data){
+        this.beneficiaries.push(new Beneficiary(data));
+    }
 }

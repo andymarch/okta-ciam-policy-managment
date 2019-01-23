@@ -154,4 +154,22 @@ body {
     margin:10px;
     font-size: medium;
 }
+
+table { 
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+td:not(:first-child) {
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:20px;       
+  }
+
+
+thead {
+    background-color: #5261ac;
+    color: white;
+}
+
 </style>

@@ -1,4 +1,4 @@
-<template src='./wishes.component.html'></template>
+<template scoped src='./wishes.component.html'></template>
 <style src='./wishes.component.css'></style>
 
 <script>
@@ -8,6 +8,7 @@
         name: 'wishes',
         data(){
             return {
+                newBene: new Beneficiary(),
                 wishes: "",
                 message: ""
             }
@@ -37,10 +38,6 @@
                 var userInfo = await this.$auth.getUser();
                 var planNumber = userInfo.PlanNumber[0];
 
-                var array1 = new Array();
-                array1['beneficiaries'] = this.wishes;
-                console.log(JSON.stringify(this.wishes));
-
                 this.$http.post(
                     'http://test-preprod-pol-uk-test.apigee.net/api/eow/v1/expressionofwishes',
                     JSON.stringify(this.wishes),{ headers: {'Authorization': planNumber}
@@ -51,6 +48,10 @@
                         console.log(response.status + " " + response.body)
                         this.message = "Sorry something went wrong."
                     });   
+            },
+            addBene: async function(){
+                this.wishes.add(this.newBene);
+                this.newBene = new Beneficiary();
             }
         },
         created: function(){
