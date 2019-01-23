@@ -1,7 +1,7 @@
 export default class Transaction {
     constructor(data) {
-        this.name = data.name;
-        this.date = data.date;
+        this.name = data.transactionName;
+        this.date = data.transactionDate;
         this.paidIn = data.paidIn;
         this.paidOut = data.paidOut;
     }

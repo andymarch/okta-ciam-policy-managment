@@ -12,13 +12,22 @@
         },
         methods: {
             getTransactions: async function() {
-                this.transactions = []
-                const response = await this.$http.get('https://test-preprod-pol-uk-test.apigee.net/mock-api/transaction/v1/transactions')
-                const json = await response.json();
-                for(var k in json.transactions) {
-                    this.transactions.push(new Transaction(json.transactions[k]));
-                }
+                this.transactions = [];
+                //get the planNumber from the userInfo
+                var userInfo = await this.$auth.getUser();
+                var planNumber = userInfo.PlanNumber[0];
 
+                const response = await this.$http.get(
+                    'http://test-preprod-pol-uk-test.apigee.net/api/transaction/v1/transactions',
+                     {params: {}, headers: {'Authorization': planNumber}})
+                     .then(async response => {
+                        const json = await response.json();
+                        for(var k in json.transactions) {
+                            this.transactions.push(new Transaction(json.transactions[k]));
+                        }
+                    }, response => {
+                        console.log(response.status)
+                    });
             }
         },
         created: function(){
