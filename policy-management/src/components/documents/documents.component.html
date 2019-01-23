@@ -1,6 +1,7 @@
 <div class="page-content">
     <div class="block">
         <h2>Your Documents</h2>
+        <div><font-awesome-icon class="clickable" icon="file-alt" size="2x"/></div>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
             laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
@@ -10,11 +11,16 @@
         <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
         <table id="documents">
             <thead>
-                <th>Document Identifier</th><th>Description</th>
+                <th>Document Identifier</th><th>Description</th><th>Download</th>
             </thead>
             <tr class="document" v-for='d in documents'>
                 <td class="documentCode">{{d.code}}</td>
                 <td class="documentDescription">{{d.description}}</td>
+                <td class="download">
+                    <font-awesome-icon
+                     class="clickable" icon="file-download" v-on:click="downloadDocument(d.code)">
+                     </font-awesome-icon>
+                </td>
             </tr>
         </table>
     </div>

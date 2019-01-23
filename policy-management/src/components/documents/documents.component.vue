@@ -13,11 +13,24 @@
         methods: {
             getDocuments: async function() {
                 this.documents = []
-                const response = await this.$http.get('https://test-preprod-pol-uk-test.apigee.net/mock-api/docs/v1/documents')
-                const json = await response.json();
-                for(var k in json.documents) {
-                    this.documents.push(new Document(json.documents[k]));
-                }
+                //get the planNumber from the userInfo
+                var userInfo = await this.$auth.getUser();
+                var planNumber = userInfo.PlanNumber[0];
+
+                const response = await this.$http.get(
+                    'http://test-preprod-pol-uk-test.apigee.net/api/docs/v1/documents',
+                     {params: {}, headers: {'Authorization': planNumber}})
+                     .then(async response => {
+                        const json = await response.json();
+                        for(var k in json.documents) {
+                            this.documents.push(new Document(json.documents[k]));
+                        }
+                    }, response => {
+                        console.log(response.status)
+                    });
+            },
+            downloadDocument: async function(documentCode){
+                console.log(documentCode);
             }
         },
         created: function(){

@@ -1,6 +1,7 @@
 <div class="page-content">
     <div class="block">
     <h2>Your Profile</h2>
+    <div><font-awesome-icon class="clickable" icon="user" size="2x"/></div>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
         laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
@@ -17,7 +18,7 @@
             <label>Policy Number</label>
             <input v-model="profile.policyNumber" disabled></input>
         </p>
-        <div id="contribution-actions">
+        <div class="actions">
             <button class="update-action" type="submit">Update Profile</button>
             <button class="reset-action" type="reset" v-on:click="getProfile">Reset</button>
         </div>  

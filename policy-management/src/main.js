@@ -5,6 +5,11 @@ import VueResource from 'vue-resource'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserLock } from '@fortawesome/free-solid-svg-icons'
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faCoins } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHandshake } from '@fortawesome/free-solid-svg-icons'
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import Auth from '@okta/okta-vue'
@@ -28,6 +33,11 @@ Vue.use(Auth, {
 
 library.add(faUserLock)
 library.add(faSyncAlt)
+library.add(faUser)
+library.add(faCoins)
+library.add(faFileAlt)
+library.add(faHandshake)
+library.add(faFileDownload)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

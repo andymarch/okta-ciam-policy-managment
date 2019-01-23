@@ -14,10 +14,10 @@
             baseUrl: sampleConfig.oidc.issuer.split('/oauth2')[0],
             clientId: sampleConfig.oidc.clientId,
             redirectUri: sampleConfig.oidc.redirectUri,
-            logo: require('@/assets/policy_cloud_black.png'),
+            //logo: require('@/assets/policy_cloud_black.png'),
             i18n: {
             en: {
-                'primaryauth.title': 'Sign in'
+                'primaryauth.title': 'Customer Sign in'
             }
             },
             features: {
