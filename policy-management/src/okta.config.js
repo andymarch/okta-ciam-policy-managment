@@ -1,6 +1,6 @@
 export default {
     oidc: {
-      clientId: '0oaj17prx2Pm9BRlK0h7',
+      clientId: '0oaj2s4r5kkHCYt7w0h7',
       issuer: 'https://pension-plan.oktapreview.com/oauth2/default',
       redirectUri: 'http://localhost:8080/implicit/callback',
       scope: 'openid profile email',

@@ -26,7 +26,7 @@ Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(Auth, {
   issuer: 'https://pension-plan.oktapreview.com/oauth2/default',
-  client_id: '0oaj17prx2Pm9BRlK0h7',
+  client_id: '0oaj2s4r5kkHCYt7w0h7',
   redirect_uri: 'http://localhost:8080/implicit/callback',
   scope: 'openid profile email'
 })
