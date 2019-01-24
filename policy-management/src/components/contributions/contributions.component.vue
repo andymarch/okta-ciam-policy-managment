@@ -14,14 +14,12 @@
         methods: {
             getContributions: async function() {
                 this.message = "";
-
-                //get the planNumber from the userInfo
-                var userInfo = await this.$auth.getUser();
-                var planNumber = userInfo.PlanNumber[0];
+                var tokenValue = await this.$auth.getAccessToken();
+                var idTokenValue = await this.$auth.getIdToken();
 
                 const response = await this.$http.get(
                     'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
-                     {params: {}, headers: {'Authorization': planNumber}})
+                     {params: {}, headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
                         const json = await response.json();
                         this.contributions = new Contributions(await response.json());
@@ -31,16 +29,15 @@
             },
 
             updateContributions: async function(){ 
-                //get the planNumber from the userInfo
-                var userInfo = await this.$auth.getUser();
-                var planNumber = userInfo.PlanNumber[0];
+                var tokenValue = await this.$auth.getAccessToken();
+                var idTokenValue = await this.$auth.getIdToken();
 
 
                 this.$http.put(
                     'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
                     this.contributions,
                     {
-                         headers: {'Authorization': planNumber}
+                         headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}
                     }).then(response => {
                         this.message = "Your contributions have been updated."
                     }, response => {

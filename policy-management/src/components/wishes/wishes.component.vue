@@ -18,13 +18,13 @@
                 this.message = "";
                 this.wishes = "";
 
-                //get the planNumber from the userInfo
-                var userInfo = await this.$auth.getUser();
-                var planNumber = userInfo.PlanNumber[0];
+                var tokenValue = await this.$auth.getAccessToken();
+                var idTokenValue = await this.$auth.getIdToken();
 
                 const response = await this.$http.get(
                     'http://test-preprod-pol-uk-test.apigee.net/api/eow/v1/expressionofwishes',
-                     {params: {}, headers: {'Authorization': planNumber}})
+                     {params: {}, headers:
+                      {'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
                         const json = await response.json();
                         this.wishes = new Wishes(json)
@@ -34,14 +34,15 @@
             },
 
             updateWishes: async function(){
-                //get the planNumber from the userInfo
-                var userInfo = await this.$auth.getUser();
-                var planNumber = userInfo.PlanNumber[0];
+                var tokenValue = await this.$auth.getAccessToken();
+                var idTokenValue = await this.$auth.getIdToken();
 
                 this.$http.post(
                     'http://test-preprod-pol-uk-test.apigee.net/api/eow/v1/expressionofwishes',
-                    JSON.stringify(this.wishes),{ headers: {'Authorization': planNumber}
-                }).then(response => {
+                    JSON.stringify(this.wishes),
+                    { headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}
+                    )
+                .then(response => {
                     console.log(response.status)
                         this.message = "Changes saved successfully"
                     }, response => {
