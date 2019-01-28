@@ -1,0 +1,41 @@
+<div class="page-content">
+    <div class="block">
+    <h2>Your Profile</h2>
+    <div><font-awesome-icon class="clickable" icon="user" size="2x"/></div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
+        laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
+        enim vitae molestie. In hac habitasse platea dictumst. Nulla facilisi. Ut iaculis mi id accumsan
+        consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
+    </p>
+    <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
+        <p>
+            <label>Agent Reference</label>
+            <input v-model="profile.agentRef"></input>
+        </p>
+        <p>
+            <label>Company Name</label>
+            <input v-model="profile.companyName"></input>
+        </p>
+        <p>
+            <label>Contact Name</label>
+            <input v-model="profile.contactName"></input>
+        </p>
+        <p>
+            <label>Contact Position</label>
+            <input v-model="profile.contactPosition"></input>
+        </p>
+        <p>
+            <label>Contact Number</label>
+            <input v-model="profile.phone"></input>
+        </p>
+        <p>
+            <label>Date Joined</label>
+            <input v-model="profile.dateJoined"></input>
+        </p>    
+        <p>
+            <label>Address</label>
+            <textarea v-model="profile.address" rows="5"></textarea>
+        </p>    
+    </div>
+</div>

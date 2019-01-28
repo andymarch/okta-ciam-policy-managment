@@ -1,0 +1,11 @@
+<div>
+    <span v-if="this.$auth.isAuthenticated()">
+        <p>UserInfo: {{this.userInfo}}</p>
+        <p>ID Token: {{this.idToken}}</p>
+        <p>Access Token: {{this.userAccessToken}}</p>  
+        <font-awesome-icon class="clickable" icon="sync-alt" v-on:click="refreshData()"/>
+    </span>
+    <span v-else>
+        <p>Cannot display information for unauthenticated session.</p>
+    </span>
+</div>

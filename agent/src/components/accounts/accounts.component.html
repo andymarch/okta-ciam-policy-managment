@@ -1,0 +1,43 @@
+<div class="page-content">
+    <div class="block">
+    <h2>Your Accounts</h2>
+    <div><font-awesome-icon class="clickable" icon="user" size="2x"/></div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper vel est sed convallis. Aenean a
+        laoreet augue. Vivamus vulputate libero vel est sagittis, et maximus leo efficitur. Nunc blandit euismod
+        enim vitae molestie. In hac habitasse platea dictumst. Nulla facilisi. Ut iaculis mi id accumsan
+        consequat. Nulla accumsan nunc a dolor dictum, at dapibus erat accumsan.
+    </p>
+    <div class="return-action"><router-link to="/dashboard">return to dashboard</router-link></div>
+    <table id="accounts">
+        <thead>
+            <th>Account ID</th><th></th>
+        </thead>
+        <tr v-for='a in accessList.agentCustomerAccessList'>
+            <td>
+                <input v-model="a.planId"></input>
+            </td>
+            <td>
+                <font-awesome-icon class="clickable" icon="user-minus" v-on:click="accessList.remove(a)"/>
+            </td>
+        </tr>
+        <tr>
+        
+            <td>
+                <input v-model="newAcc.planId"></input>
+            </td>
+            <td>
+                <font-awesome-icon class="clickable" icon="user-plus" v-on:click="addAcc()"/>
+            </td>  
+        </tr>
+    </table>
+
+<form @submit.prevent="updateAccounts">
+    <button class="update-action" type="submit">Save</button>
+    <button class="reset-action" type="reset" v-on:click="getAccounts">Reset</button>
+</form>
+<div>
+    <p>{{message}}</p>
+</div>
+</div>
+</div>
