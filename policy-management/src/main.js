@@ -46,6 +46,10 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
+window.addEventListener('unhandledrejection', function(event) {
+  console.error('I am a global catch for '+event);
+});
+
 const router = new VueRouter(
   {
     mode: 'history',

@@ -1,16 +1,20 @@
 <div class="page-content">
     <div class="block">
         <p>Welcome to your dashboard {{ this.$parent.activeUser.name }}.</p>
+        <p v-if="planId">Your plan number is {{ this.planId }}.</p>
+        <p v-else>Your plan number is not set, please contact your agent</p>
     </div>
-    <div class="block">
-        <h2>Recent Transactions</h2>
-        <Transactions></Transactions>
-    </div>
-    <div class="block">
-        <h2>Your Available Actions</h2>
-            <p><router-link to="/profile">Manage your profile</router-link></p>
-            <p><router-link to="/contributions">Adjust your contributions</router-link></p>
-            <p><router-link to="/documents">Your documents</router-link></p>
-            <p><router-link to="/wishes">Confirm your wishes</router-link></p>
-    </div>
+    <span v-if="planId">
+        <div class="block">
+            <h2>Recent Transactions</h2>
+            <Transactions></Transactions>
+        </div>
+        <div class="block">
+            <h2>Your Available Actions</h2>
+                <p><router-link to="/profile">Manage your profile</router-link></p>
+                <p><router-link to="/contributions">Adjust your contributions</router-link></p>
+                <p><router-link to="/documents">Your documents</router-link></p>
+                <p><router-link to="/wishes">Confirm your wishes</router-link></p>
+        </div>
+    </span>
 </div>

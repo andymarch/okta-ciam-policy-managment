@@ -5,8 +5,28 @@
     import Transactions from '../transactions/transactions.component.vue'
     export default {
         name: 'dashboard',
+        data(){
+            return {
+                planId: null
+            }
+        },
         components: {
             Transactions
+        },
+        methods: {
+            parsePlanId: async function() {
+                var token = await this.$auth.getAccessToken();
+                var base64Url = token.split('.')[1];
+                var base64 = base64Url.replace('-', '+').replace('_', '/');
+                var json = JSON.parse(window.atob(base64));
+                console.log(json)
+                if(json.planid != undefined){
+                    this.planId = json.planid;
+                }
+            }
+        },
+        created: function(){
+            this.parsePlanId();
         }
     }
 </script>
