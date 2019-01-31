@@ -26,7 +26,7 @@
                 selfServiceUnlock: true,          // Will enable unlock in addition to forgotten password
             },
             idps: [
-                {type: 'GOOGLE', id: '0oaj2qy01c1n4GKa40h7'}
+                {type: 'GOOGLE', id: '0oa2iui24jBAiynyN0i7'}
             ],
             authParams: {
             responseType: ['id_token', 'token'],
@@ -46,7 +46,7 @@
             (err) => {
             throw err
             }
-        )
+        )       
         })
     },
     destroyed () {
