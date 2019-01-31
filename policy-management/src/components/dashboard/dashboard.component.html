@@ -1,6 +1,6 @@
 <div class="page-content">
     <div class="block">
-        <p>Welcome to your dashboard {{ this.$parent.activeUser.name }}.</p>
+        <p>Welcome to your dashboard {{ this.user.name }}.</p>
         <p v-if="planId">Your plan number is {{ this.planId }}.</p>
         <p v-else>Your plan number is not set, please contact your agent</p>
     </div>

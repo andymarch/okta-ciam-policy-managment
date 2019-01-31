@@ -7,6 +7,7 @@
         name: 'dashboard',
         data(){
             return {
+                user:"",
                 planId: null
             }
         },
@@ -15,6 +16,7 @@
         },
         methods: {
             parsePlanId: async function() {
+                this.user = await this.$auth.getUser();
                 var token = await this.$auth.getAccessToken();
                 var base64Url = token.split('.')[1];
                 var base64 = base64Url.replace('-', '+').replace('_', '/');
