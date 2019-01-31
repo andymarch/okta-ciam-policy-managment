@@ -24,7 +24,7 @@
                         const json = await response.json();
                         this.contributions = new Contributions(await response.json());
                     }, response => {
-                        console.log(response.status)
+                        console.log("Error: "+response.status + " " + response.body)
                     });
             },
 
@@ -41,7 +41,7 @@
                     }).then(response => {
                         this.message = "Your contributions have been updated."
                     }, response => {
-                        console.log(response.status + " " + response.body)
+                        console.log("Error: "+response.status + " " + response.body)
                         this.message = "Sorry something went wrong."
                     });
             }

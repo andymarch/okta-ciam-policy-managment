@@ -26,7 +26,7 @@ import AccountAccess from './models/accountaccess.model.js';
                         const json = await response.json();
                         this.accessList = new AccessList(json)
                     }, response => {
-                        console.log(response.status)
+                        console.log("Error: "+response.status + " " + response.body)
                     });
             },
             updateAccounts: async function(){
@@ -39,10 +39,9 @@ import AccountAccess from './models/accountaccess.model.js';
                     { headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}
                     )
                 .then(response => {
-                    console.log(response.status)
                         this.message = "Changes saved successfully"
                     }, response => {
-                        console.log(response.status + " " + response.body)
+                        console.log("Error: "+response.status + " " + response.body)
                         this.message = "Sorry something went wrong."
                     });   
             },

@@ -23,7 +23,7 @@
                         const json = await response.json();
                         this.profile = new Profile(json);
                     }, response => {
-                        console.log(response.status)
+                        console.log("Error: "+response.status + " " + response.body)
                     });
             }
         },

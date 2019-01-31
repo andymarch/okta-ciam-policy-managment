@@ -29,7 +29,7 @@
                         const json = await response.json();
                         this.wishes = new Wishes(json)
                     }, response => {
-                        console.log(response.status)
+                        console.log("Error: "+response.status + " " + response.body)
                     });
             },
 
@@ -43,10 +43,9 @@
                     { headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}
                     )
                 .then(response => {
-                    console.log(response.status)
                         this.message = "Changes saved successfully"
                     }, response => {
-                        console.log(response.status + " " + response.body)
+                        console.log("Error: "+response.status + " " + response.body)
                         this.message = "Sorry something went wrong."
                     });   
             },

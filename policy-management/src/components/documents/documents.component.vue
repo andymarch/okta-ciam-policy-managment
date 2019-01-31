@@ -25,7 +25,7 @@
                             this.documents.push(new Document(json.documents[k]));
                         }
                     }, response => {
-                        console.log(response.status)
+                        console.log("Error: "+response.status + " " + response.body)
                     });
             },
             downloadDocument: async function(documentCode){
