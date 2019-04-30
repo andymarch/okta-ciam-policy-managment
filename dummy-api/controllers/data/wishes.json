@@ -1,0 +1,15 @@
+{
+    "beneficiaries" : [
+        {
+            "beneficiaryFullName" : "Ann Tester",
+            "relationshipToBeneficiary" : "Partner",
+            "percentageAllocated" : "75"
+        },
+        {
+            "beneficiaryFullName" : "Bill Tester",
+            "relationshipToBeneficiary" : "Brother",
+            "percentageAllocated" : "25"
+        }
+
+    ]
+}

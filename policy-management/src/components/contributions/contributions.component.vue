@@ -18,7 +18,7 @@
                 var idTokenValue = await this.$auth.getIdToken();
 
                 const response = await this.$http.get(
-                    'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
+                    process.env.VUE_APP_API_BASE_URI+'/contribution/v1/contributions',
                      {params: {}, headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
                         const json = await response.json();
@@ -34,7 +34,7 @@
 
 
                 this.$http.put(
-                    'http://test-preprod-pol-uk-test.apigee.net/api/contribution/v1/contributions',
+                    process.env.VUE_APP_API_BASE_URI+'/contribution/v1/contributions',
                     this.contributions,
                     {
                          headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}

@@ -1,0 +1,17 @@
+{
+    "additionalVoluntaryContribution" : 5,
+    "employeeContribution" : 4,
+    "employerContribution" : 3,
+
+    "weeklyAdditionalVoluntaryContribution" : 15,
+    "weeklyEmployeeContribution" : 5,
+    "weeklyEmployerContribution" : 7,
+
+    "monthlyAdditionalVoluntaryContribution" : 10,
+    "monthlyEmployeeContribution" : 6,
+    "monthlyEmployerContribution" : 3,
+
+    "yearlyAdditionalVoluntaryContribution" : 125,
+    "yearlyEmployeeContribution" : 100,
+    "yearlyEmployerContribution" : 25
+}

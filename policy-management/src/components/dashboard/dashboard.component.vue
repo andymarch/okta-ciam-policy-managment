@@ -17,7 +17,7 @@
         methods: {
             parsePlanId: async function() {
                 this.user = await this.$auth.getUser();
-                var token = await this.$auth.getAccessToken();
+                var token = await this.$auth.getIdToken();
                 var base64Url = token.split('.')[1];
                 var base64 = base64Url.replace('-', '+').replace('_', '/');
                 var json = JSON.parse(window.atob(base64));

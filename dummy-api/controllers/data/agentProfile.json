@@ -1,0 +1,9 @@
+{
+    "agentRef" : "ag12345",
+    "companyName" : "My Pension Broker",
+    "contactName" : "Richard Broker",
+    "contactPosition" : "Senior Broker",
+    "phone" : "08081 570999",
+    "dateJoined" : "31/12/2010",
+    "address": "1 Big Company Square, The City, LDN15 9RF"
+}

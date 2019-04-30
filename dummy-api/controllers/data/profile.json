@@ -1,0 +1,14 @@
+{
+    "memRef" : 123,
+    "name" : "Tim",
+    "surname" : "Tester",
+    "maritalStatusCode" : "Married",
+    "gender" : "Male",
+    "salary" : "35000",
+    "ppsNumber" : "123456789",
+    "mobile" : "07700 900099",
+    "dob" : "01/01/1990",
+    "retirementDate" : "01/01/2055",
+    "dateJoinedScheme" : "01/01/2018",
+    "address" : "1 Main Street, Anytown, Any Country, LDN123 5NA"
+}

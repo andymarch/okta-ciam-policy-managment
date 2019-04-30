@@ -1,0 +1,7 @@
+{
+    "agentCustomerAccessList" : [
+        {"planId": 12345},
+        {"planId": 98765},
+        {"planId": 45678}
+    ]
+}

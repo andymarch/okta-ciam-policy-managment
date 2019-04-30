@@ -1,0 +1,12 @@
+{
+    "documents": [
+        {
+            "documentCode" : "Ben12345678",
+            "documentDescription" : "This is your benefits notice."
+        },
+        {
+            "documentCode" : "Enroll123456789",
+            "documentDescription" : "This is your enrollment notice. You have been subscribed to a new plan."
+        }
+    ]
+}

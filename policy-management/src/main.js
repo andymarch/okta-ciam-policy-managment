@@ -29,7 +29,7 @@ Vue.use(VueRouter)
 Vue.use(Auth, {
   issuer: process.env.VUE_APP_ISSUER,
   client_id: process.env.VUE_APP_CLIENT_ID,
-  redirect_uri: process.env.VUE_APP_REDIRECT,
+  redirect_uri: process.env.VUE_APP_REDIRECT_URI,
   scope: process.env.VUE_APP_SCOPE
 })
 
@@ -45,10 +45,6 @@ library.add(faUserMinus)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
-
-window.addEventListener('unhandledrejection', function(event) {
-  console.error('I am a global catch for '+event);
-});
 
 const router = new VueRouter(
   {

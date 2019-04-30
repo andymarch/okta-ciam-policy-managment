@@ -19,7 +19,7 @@ import AccountAccess from './models/accountaccess.model.js';
                 var idTokenValue = await this.$auth.getIdToken();
 
                 const response = await this.$http.get(
-                    'http://test-preprod-pol-uk-test.apigee.net/api/access/v1/agentcustomeraccess',
+                    process.env.VUE_APP_API_BASE_URI+'/access/v1/agentcustomeraccess',
                      {params: {}, headers:
                       {'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
@@ -34,7 +34,7 @@ import AccountAccess from './models/accountaccess.model.js';
                 var idTokenValue = await this.$auth.getIdToken();
 
                 this.$http.post(
-                    'http://test-preprod-pol-uk-test.apigee.net/api/access/v1/agentcustomeraccess',
+                    process.env.VUE_APP_API_BASE_URI+'/access/v1/agentcustomeraccess',
                     JSON.stringify(this.accessList),
                     { headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}
                     )

@@ -17,7 +17,7 @@
                 var idTokenValue = await this.$auth.getIdToken();
 
                 const response = await this.$http.get(
-                    'http://test-preprod-pol-uk-test.apigee.net/api/docs/v1/documents',
+                    process.env.VUE_APP_API_BASE_URI+'/docs/v1/documents',
                      {params: {}, headers:{'Authorization': 'Bearer '+tokenValue,'id_token': idTokenValue}}) 
                      .then(async response => {
                         const json = await response.json();
